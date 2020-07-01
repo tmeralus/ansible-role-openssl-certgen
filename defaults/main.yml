@@ -1,6 +1,7 @@
 ---
 openssl_keys:
- - name: "{{ inventory_hostname }}.key"
+ - name: "jenkins.key"
+# - name: "{{ inventory_hostname }}.key"
    key: "ssl_keycontents"
    mode: "0664"
    owner: "root"
@@ -14,20 +15,21 @@ openssl_certs:
    owner: "root"
    group: "root"
 openssl_self_signed:
- - name: "{{ inventory_hostname }}_signed"
+ - name: "jenkins_signed"
+# - name: "{{ inventory_hostname }}_signed"
    subject:
       C: FL
       ST: Florida
       L: Boca Raton
       O: company
       CN: company.com
-      emailAddress: networking@company.com
+      emailAddress: tmeralus@gmail.com
 openssl_config:
  default_bits: 2048
  countryName_default: US
  stateOrProvinceName_default: Florida
- localityName_default: Boca Raton
- organizationName_default: 'company'
+ localityName_default: ''
+ organizationName_default: ''
  organizationalUnitName_default: 'ssl Organization Unit'
  commonName_default: 'company.com'
 
